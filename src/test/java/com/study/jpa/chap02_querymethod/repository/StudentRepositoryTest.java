@@ -23,7 +23,7 @@ class StudentRepositoryTest {
     StudentRepository studentRepository;
 
     // @BeforeAll : 해당 테스트 클래스를 초기화 할 때 딱 한번 수행되는 메서드 (static으로 선언해야 함)
-    @BeforeEach // 각각의 테스트 메서드 실행 직전에 수행되는 메서드
+    // @BeforeEach // 각각의 테스트 메서드 실행 직전에 수행되는 메서드
     void insertData() {
         Student s1 = Student.builder()
                 .name("춘식이")
@@ -57,6 +57,53 @@ class StudentRepositoryTest {
         assertEquals(1, students.size());
 
         System.out.println("students.get(0) = " + students.get(0));
+    }
+
+    @Test
+    @DisplayName("testFindByCityAndMajor")
+    void testFindByCityAndMajor() {
+        // given
+        String city = "부산시";
+        String major = "수학교육과";
+
+        // when
+        List<Student> students = studentRepository.findByCityAndMajor(city, major);
+
+        // then
+        assertEquals(2, students.size());
+        assertEquals("언년이", students.get(0).getName());
+
+        System.out.println("students.get(0) = " + students.get(0));
+    }
+
+    @Test
+    @DisplayName("testFindByMajorContaining")
+    void testFindByMajorContaining() {
+        // given
+        String major = "수학";
+        // when
+        List<Student> students = studentRepository.findByMajorContaining(major);
+        // then
+        assertEquals(4, students.size());
+
+        System.out.println("\n\n\n");
+        students.forEach(System.out::println);
+        System.out.println("\n\n\n");
+    }
+
+    @Test
+    @DisplayName("testNativeSQL")
+    void testNativeSQL() {
+        // given
+        String name = "대길이";
+        // when
+        List<Student> students = studentRepository.findNameWithSQL(name);
+
+        // then
+        assertEquals("한양도성", students.get(0).getCity());
+
+        System.out.println("\n\n\n");
+        students.forEach(stu -> System.out.println(stu));
     }
 
 
