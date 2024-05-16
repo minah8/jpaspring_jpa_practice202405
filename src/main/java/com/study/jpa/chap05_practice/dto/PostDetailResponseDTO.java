@@ -1,8 +1,8 @@
-package com.study.jpa.chap05_pratice.dto;
+package com.study.jpa.chap05_practice.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.study.jpa.chap05_pratice.entity.HashTag;
-import com.study.jpa.chap05_pratice.entity.Post;
+import com.study.jpa.chap05_practice.entity.HashTag;
+import com.study.jpa.chap05_practice.entity.Post;
 import lombok.*;
 
 import java.time.LocalDateTime;

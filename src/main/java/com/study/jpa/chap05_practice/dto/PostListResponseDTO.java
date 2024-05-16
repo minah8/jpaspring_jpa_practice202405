@@ -1,4 +1,4 @@
-package com.study.jpa.chap05_pratice.dto;
+package com.study.jpa.chap05_practice.dto;
 
 import lombok.*;
 

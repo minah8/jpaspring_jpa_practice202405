@@ -1,6 +1,6 @@
-package com.study.jpa.chap05_pratice.dto;
+package com.study.jpa.chap05_practice.dto;
 
-import com.study.jpa.chap05_pratice.entity.Post;
+import com.study.jpa.chap05_practice.entity.Post;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

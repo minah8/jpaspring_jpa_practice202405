@@ -1,4 +1,4 @@
-package com.study.jpa.chap05_pratice.entity;
+package com.study.jpa.chap05_practice.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
