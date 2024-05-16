@@ -18,3 +18,8 @@ spring:
     hibernate:
       ddl-auto: update # 자동 DDL 설정 옵션 -> create로 설정하면 클래스 모양대로 테이블 자동 생성.
     database: mysql # DB 계열 설정
+
+# swagger setting
+springdoc:
+  swagger-ui:
+    path: /myapi.html
